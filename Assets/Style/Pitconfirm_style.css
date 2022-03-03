@@ -2,21 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "F1-Regular";
 }
 
 :root {
-    --normal-background-color: rgba(35, 35, 35, 1);
+    /*HTML*/
+        --normal-background-color: rgba(35, 35, 35, 1);
 
-    --Mercedes: #00D2BE;
-    --Ferrari: #DC0000;
-    --RedBullRacing: #0600EF;
-    --Alpine: #0090FF;
-    --Haas: #FFFFFF;
-    --AstonMartin: #006F62;
-    --AlphaTauri: #2B4562;
-    --McLaren: #FF8700;
-    --AlfaRomeoRacing: #900000;
-    --Williams: #005AFF;
+
+    /*Team Colours*/
+        --Mercedes: #00D2BE;
+        --Ferrari: #DC0000;
+        --RedBullRacing: #0600EF;
+        --Alpine: #0090FF;
+        --Haas: #FFFFFF;
+        --AstonMartin: #006F62;
+        --AlphaTauri: #2B4562;
+        --McLaren: #FF8700;
+        --AlfaRomeoRacing: #900000;
+        --Williams: #005AFF;
+
+
+    /*Classification*/
+        --Gain-place: rgb(65, 214, 69);
+        --Lose-place: rgb(234, 55, 57);
+
+
+    /*Accident*/
+        --Yellow-Flag: rgb(253, 211, 0);
+        --Red-Flag: rgb(204, 25, 25);
   }
 
 body{
@@ -29,11 +43,11 @@ ol {
     padding: 4px 0 0 4px;
     overflow-x: hidden;
     width: 100%;
+    height: fit-content;
 }
 
 li {
     padding-left: 20px;
-    padding-bottom: 6px;
 
     display: flex;
     flex-direction: row;
@@ -41,7 +55,7 @@ li {
     background-color: var(--normal-background-color);
 
     transition: 0.2s ease-out;
-    height: auto;
+    height: calc(28px + 6px);
    
 }
 
@@ -70,14 +84,14 @@ li.another-row-background-color {
 
 
 
-
+/*Drivers*/
 
 div.flex-container {
     display: grid;
     flex-direction: row;
 }
 
-div.position-order {
+.position-order {
     width: 28px;
     height: 28px;
 
@@ -114,10 +128,20 @@ div.position-order {
 
 }
 
-div.lap-count-container {
+
+
+
+
+/*Lap counter*/
+
+.lap-count-container {
     height: 60px;
     background-color: #000;
+    
+    text-align: right;
+    color: white;
 
+    padding-right: 16px;
 }
 
 p.lap-text {
@@ -126,7 +150,6 @@ p.lap-text {
     top: calc(60px / 4);
 
     font-family: "F1-Wide";
-    color: white;
     font-size: 22px;
 
     margin-left: 20px;
@@ -136,6 +159,7 @@ p.lap-text {
     border-right: 1px solid rgb(152, 152, 152);
     border-bottom-right-radius: 2px 6px;
     border-top-right-radius: 2px 6px;
+
 }
 
 p.lap-count {
@@ -144,7 +168,6 @@ p.lap-count {
     top: calc(60px / 4);
 
     font-family: "F1-Regular";
-    color: white;
     font-size: 20px;
 
 }
@@ -153,50 +176,119 @@ span.dash {
     margin: 0 10px;
 }
 
-
-.Mercedes-color  { 
-    border-color: var(--Mercedes); 
-}
-
-.Ferrari-color {
-    border-color: var(--Ferrari); 
-}
-
-.RedBullRacing-color {
-    border-color: var(--RedBullRacing); 
-}
-
-.Alpine-color {
-    border-color: var(--Alpine); 
-}
-
-.Haas-color {
-    border-color: var(--Haas); 
-}
-
-.AstonMartin-color {
-    border-color: var(--AstonMartin); 
-}
-
-.AlphaTauri-color {
-    border-color: var(--AlphaTauri); 
-}
-
-.McLaren-color {
-    border-color: var(--McLaren); 
-}
-
-.AlfaRomeoRacing-color {
-    border-color: var(--AlfaRomeoRacing); 
-}
-
-.Williams-color {
-    border-color: var(--Williams); 
+span.lap-completed {
+    font-weight: bold;
 }
 
 
+p.Accident-text-in-lap-counter{
+    font-family: "F1-Bold";
+    font-size: 1.5rem;
+
+    float: left;
+    position: relative;
+    top: calc(60px / 4);
+
+    padding-left: 20px;
+}
 
 
+/*Yellow Flag / SC / Red flag*/
+
+div.situation {
+
+    height: 100px;
+    background-color: var(--Yellow-Flag);
+
+    font-family: "F1-Bold";
+    font-size: 1.5rem;
+
+    padding-top: 10px;
+    padding-left: 20px;
+
+}
+
+.
+
+
+
+
+
+
+
+/*Colours*/
+
+/*Team Colours*/
+    .Mercedes-color  { 
+        border-color: var(--Mercedes); 
+    }
+
+    .Ferrari-color {
+        border-color: var(--Ferrari); 
+    }
+
+    .RedBullRacing-color {
+        border-color: var(--RedBullRacing); 
+    }
+
+    .Alpine-color {
+        border-color: var(--Alpine); 
+    }
+
+    .Haas-color {
+        border-color: var(--Haas); 
+    }
+
+    .AstonMartin-color {
+        border-color: var(--AstonMartin); 
+    }
+
+    .AlphaTauri-color {
+        border-color: var(--AlphaTauri); 
+    }
+
+    .McLaren-color {
+        border-color: var(--McLaren); 
+    }
+
+    .AlfaRomeoRacing-color {
+        border-color: var(--AlfaRomeoRacing); 
+    }
+
+    .Williams-color {
+        border-color: var(--Williams); 
+    }
+
+
+
+
+
+/*Classification*/
+    .Gain-place {
+        background-color: var(--Gain-place);
+    }
+
+    .Lose-place {
+        background-color: var(--Lose-place);
+    }
+
+    .Did-Not-Finish {
+        opacity: 0.4;
+        border-left: 0;
+        margin-left: 42px;
+        background-color: rgb(42, 42, 42);
+    }
+
+
+
+/*Accident*/
+    .Yellow-Flag {
+        color: var(--Yellow-Flag);
+    }
+
+    .Red-Flag {
+        color:var(--Red-Flag);
+    }
 
 
 
