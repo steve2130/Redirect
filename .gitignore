@@ -1,0 +1,7 @@
+src/Twitter_Account.py
+.vscode/*
+.DS_Store/*
+src/accounts.db
+accounts.db
+*.pyc
+src/*.pyc
